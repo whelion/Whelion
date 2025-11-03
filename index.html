@@ -10,10 +10,12 @@
 </head>
 <body>
 
+    <!-- Page Loader -->
     <div id="loader">
         <div class="loader-circle"></div>
     </div>
 
+    <!-- Header -->
     <header id="main-header" class="main-header">
         <div class="header-container">
             
@@ -22,33 +24,40 @@
                 <span>WHELION</span>
             </a>
 
+            <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <a href="#" class="nav-link active" data-page="home">Home</a>
                 <a href="#" class="nav-link" data-page="services">Our Services</a>
                 <a href="#" class="nav-link" data-page="pricing">Pricing & Packages</a>
                 <a href="#portfolio" class="nav-link" data-scroll-to="portfolio">Portfolio</a>
-                <a href="#contact" class="nav-link nav-cta-btn" data-scroll-to="contact">
+                <!-- This button now opens the form modal -->
+                <a href="#" class="nav-link nav-cta-btn open-form-cta">
                     Get in Touch
                 </a>
             </nav>
             
+            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="mobile-menu-btn">
-                <svg id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-open" class="" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 <svg id="menu-icon-close" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
         
-        <div id="mobile-menu" class="mobile-menu">
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="mobile-menu hidden">
             <a href="#" class="nav-link" data-page="home">Home</a>
-            <a href="#" class="nav-link" data-page="services">Our Services</a>
+            <a href="#" class="nav-link" data-page="services">Services</a>
             <a href="#" class="nav-link" data-page="pricing">Pricing & Packages</a>
             <a href="#portfolio" class="nav-link" data-scroll-to="portfolio">Portfolio</a>
-            <a href="#contact" class="nav-link" data-scroll-to="contact">Get in Touch</a>
+            <!-- This button now opens the form modal -->
+            <a href="#" class="nav-link open-form-cta">Get in Touch</a>
         </div>
     </header>
 
+    <!-- Main Content Wrapper -->
     <main id="content-wrapper" class="content-wrapper">
 
+        <!-- ========== HOME PAGE CONTENT ========== -->
         <section id="home-content" class="page-content">
             
             <section class="hero-section">
@@ -60,8 +69,8 @@
                     <p class="hero-subtext">
                         Whelion is a bespoke web development agency crafting high-performance, luxurious digital experiences that define brands.
                     </p>
-                    <a href="#services" class="hero-cta-btn">
-                       Explore Our Services
+                    <a href="#" class="hero-cta-btn open-form-cta">
+                        Explore Our Services
                     </a>
                 </div>
             </section>
@@ -99,7 +108,7 @@
                             <div class="portfolio-card-content">
                                 <h3 class="portfolio-card-title">Valerian</h3>
                                 <p class="portfolio-card-description">High-fashion e-commerce platform.</p>
-                                <a href="https://vishal-portfolio.github.io/VALERIAN/" class="portfolio-card-link">View Case Study (Demo)</a>
+                                <a href="https://vishal-portfolio.github.io/VALERIAN/" class="portfolio-card-link" target="_blank" rel="noopener noreferrer">View Case Study (Demo)</a>
                             </div>
                         </div>
                         <div class="portfolio-card group reveal-on-scroll" style="transition-delay: 0.2s;">
@@ -113,9 +122,9 @@
                         <div class="portfolio-card group reveal-on-scroll" style="transition-delay: 0.4s;">
                             <img src="agency.jpg" alt="Corporate project screenshot">
                             <div class="portfolio-card-content">
-                                <h3 class="portfolio-card-title">Orion Group</h3>
+                                <h3 class="portfolio-card-title">Agency</h3>
                                 <p class="portfolio-card-description">Corporate web presence for a global consultancy.</p>
-                                <a href="https://whelion.github.io/whelion-website/" class="portfolio-card-link">View Case Study (Demo)</a>
+                                <a href="https://whelion.github.io/whelion-website/" class="portfolio-card-link" target="_blank" rel="noopener noreferrer">View Case Study (Demo)</a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +168,7 @@
                                 <p>Yes, we offer comprehensive maintenance and support packages. This includes security updates, performance monitoring, content updates, and technical support to ensure your website remains fast, secure, and up-to-date.</p>
                             </div>
                         </div>
-                        <div class="faq-item">
+                         <div class="faq-item">
                             <button class="faq-question">
                                 <span class="faq-question-text">Will my website be mobile-friendly?</span>
                                 <span class="faq-icon-plus">&plus;</span>
@@ -168,7 +177,7 @@
                                 <p>Absolutely. Every website we build is fully responsive — it will look perfect on desktops, tablets, and smartphones.</p>
                             </div>
                         </div>
-                        <div class="faq-item">
+                         <div class="faq-item">
                             <button class="faq-question">
                                 <span class="faq-question-text">Can you redesign my old website and make it look modern?</span>
                                 <span class="faq-icon-plus">&plus;</span>
@@ -187,7 +196,7 @@
                     <p class="cta-description">
                         Let's discuss how we can create a digital presence that is as unique and ambitious as your vision.
                     </p>
-                    <a href="#" class="cta-button">
+                    <a href="#" class="cta-button open-form-cta">
                         Schedule a Consultation
                     </a>
                 </div>
@@ -195,6 +204,7 @@
 
         </section>
 
+        <!-- ========== SERVICES PAGE CONTENT ========== -->
         <section id="services-content" class="page-content hidden services-section section-padding">
             <div class="container">
                 <div class="section-header reveal-on-scroll">
@@ -257,6 +267,7 @@
             </div>
         </section>
 
+        <!-- ========== PRICING PAGE CONTENT ========== -->
         <section id="pricing-content" class="page-content hidden pricing-section section-padding">
             <div class="container">
                 <div class="section-header reveal-on-scroll">
@@ -278,7 +289,7 @@
                             <li><span>&#10003;</span>Basic SEO Setup</li>
                             <li><span>&#10003;</span>Contact Form Integration</li>
                         </ul>
-                        <a href="#contact" class="pricing-card-button data-scroll-to">
+                        <a href="#" class="pricing-card-button open-form-cta">
                             Get Started
                         </a>
                     </div>
@@ -297,7 +308,7 @@
                             <li><span>&#10003;</span>Advanced SEO & Analytics</li>
                             <li><span>&#10003;</span>Blog & Content Strategy</li>
                         </ul>
-                        <a href="#contact" class="pricing-card-button data-scroll-to">
+                        <a href="#" class="pricing-card-button open-form-cta">
                             Request a Quote
                         </a>
                     </div>
@@ -312,7 +323,7 @@
                             <li><span>&#10003;</span>Advanced E-commerce</li>
                             <li><span>&#10003;</span>Dedicated Support & Maintenance</li>
                         </ul>
-                        <a href="#contact" class="pricing-card-button data-scroll-to">
+                        <a href="#" class="pricing-card-button open-form-cta">
                             Contact Us
                         </a>
                     </div>
@@ -323,6 +334,7 @@
 
     </main>
     
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -333,10 +345,10 @@
                     </a>
                     <p class="footer-description">Crafting the future of digital elegance. Based in the digital ether, serving globally.</p>
                     <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/whelion-agency-b45847339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                        <a href="https://www.linkedin.com/in/whelion-agency-b45847339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">
                             <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.783 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
-                        <a href="https://www.instagram.com/whelion_digital?igsh=Mmp4N3ZvejhwOXdj" target="_blank">
+                        <a href="https://www.instagram.com/whelion_digital?igsh=Mmp4N3ZvejhwOXdj " target="_blank">
                             <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.305.196-6.135 2.025-6.331 6.331-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.196 4.305 2.025 6.135 6.331 6.331 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c4.305-.196 6.135-2.025 6.331-6.331.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.196-4.305-2.025-6.135-6.331-6.331-1.28-.058-1.688-.072-4.947-.072zm0 6.163c-3.203 0-5.837 2.634-5.837 5.837s2.634 5.837 5.837 5.837 5.837-2.634 5.837-5.837-2.634-5.837-5.837-5.837zm0 9.5c-2.02 0-3.663-1.643-3.663-3.663s1.643-3.663 3.663-3.663 3.663 1.643 3.663 3.663-1.643 3.663-3.663 3.663zm6.163-10.337c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/></svg>
                         </a>
                         <a href="https://wa.me/qr/GSGVZJ7QLKJXF1" target="_blank">
@@ -368,7 +380,45 @@
         </div>
     </footer>
 
+    <!-- ========== CONTACT FORM MODAL ========== -->
+    <div id="form-modal" class="form-modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Get in Touch</h3>
+                <p class="modal-description">Fill out the form and we'll get back to you shortly.</p>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST" class="modal-form">
+
+               <input type="hidden" name="access_key" value="1492d36c-a266-4d80-a3f2-213e4cbcf3eb">
+                
+
+                <!-- This will be the email subject -->
+                <input type="hidden" name="subject" value="New Contact Form Submission from Whelion Website">
+                <!-- Optional: Redirect to a custom thank you page -->
+                <!-- <input type="hidden" name="redirect" value="https://your-website.com/thanks.html"> -->
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help?</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="form-submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <!-- ======================================== -->
+
     <script src="script.js"></script>
 
 </body>
 </html>
+
