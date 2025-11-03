@@ -21,6 +21,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth; /* Ensures smooth scroll for anchor links */
+}
+
 body {
     background-color: var(--whelion-beige);
     color: var(--whelion-dark);
@@ -40,6 +44,11 @@ img {
 }
 
 /* ========== 3. REUSABLE UTILITY CLASSES ========== */
+
+/* Simple hidden class for JS toggles */
+.hidden {
+    display: none !important; /* Added !important to ensure it overrides */
+}
 
 /* Reusable container */
 .container {
@@ -118,7 +127,7 @@ img {
     display: none;
 }
 
-/* ========== 4. PAGE LOADER (From original style.css) ========== */
+/* ========== 4. PAGE LOADER ========== */
 #loader {
     position: fixed;
     top: 0;
@@ -147,6 +156,7 @@ img {
     to { transform: rotate(360deg); }
 }
 
+/* This class is added by JS when page is loaded */
 .loader-hidden {
     opacity: 0;
     visibility: hidden;
@@ -194,12 +204,18 @@ img {
     border-radius: 9999px; /* rounded-full */
     margin-right: 0.75rem; /* mr-3 */
     flex-shrink: 0;
+    overflow: hidden; /* Added to contain image */
 }
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 /* Desktop Navigation */
 .desktop-nav {
-    display: none;
-    
+    display: none; 
 }
 @media (min-width: 768px) {
     .desktop-nav {
@@ -213,6 +229,9 @@ img {
 }
 
 /* Navigation Links (Shared) */
+.nav-link {
+    color: #ffffff; /* Explicitly set for links */
+}
 .nav-link.active {
     color: var(--whelion-gold);
     font-weight: 700;
@@ -233,15 +252,14 @@ img {
 .nav-cta-btn.active::after {
     display: none;
 }
-.desktop-nav{
-    color: black;
-}
+
 .nav-cta-btn {
     background-color: var(--whelion-gold);
     color: var(--whelion-dark);
     padding: 0.5rem 1rem; /* px-4 py-2 */
     border-radius: 9999px; /* rounded-full */
     transition: all 0.3s;
+    cursor: pointer;
 }
 .nav-cta-btn:hover {
     opacity: 0.9; /* hover:bg-opacity-90 */
@@ -250,6 +268,10 @@ img {
 /* Mobile Menu Button */
 .mobile-menu-btn {
     padding: 0.5rem; /* p-2 */
+    background: none;
+    border: none;
+    color: var(--whelion-beige);
+    cursor: pointer;
 }
 @media (min-width: 768px) {
     .mobile-menu-btn {
@@ -270,8 +292,9 @@ img {
 
 
 /* Mobile Menu Panel */
+/* *** FIX *** Removed 'display: none;' from here. JS now controls visibility via .hidden class */
 .mobile-menu {
-    display: none; /* 'hidden' class toggled by JS */
+    /* display: none; <-- REMOVED */
     background-color: var(--whelion-dark);
     width: 100%;
     position: absolute;
@@ -294,7 +317,8 @@ img {
     background-color: var(--whelion-gold);
     color: var(--whelion-dark);
 }
-.mobile-menu a[data-scroll-to="contact"] {
+.mobile-menu a[data-scroll-to="contact"],
+.mobile-menu a.open-form-cta {
     background-color: var(--whelion-gold);
     color: var(--whelion-dark);
     border-bottom: none;
@@ -325,6 +349,8 @@ img {
     background-image: url('home.png'); /* Moved from inline style */
     background-size: cover;
     background-position: center;
+    /* Fallback background in case image fails */
+    background-color: var(--whelion-dark);
 }
 
 .hero-overlay {
@@ -342,9 +368,10 @@ img {
 .hero-title {
     font-family: var(--font-serif-display);
     font-weight: 800; /* font-extrabold */
-    font-size: 3rem; /* text-5xl */
+    font-size: 4rem; /* text-5xl */
     line-height: 1;
-    margin-bottom: 1.5rem; /* mb-6 */
+    margin-bottom: 1rem; /* mb-6 */
+    margin-top: 3.99rem;
 }
 @media (min-width: 768px) {
     .hero-title {
@@ -357,7 +384,7 @@ img {
     }
 }
 
-/* Hero Text Animation (From original style.css) */
+/* Hero Text Animation */
 .hero-line {
     display: inline-block;
     overflow: hidden;
@@ -377,9 +404,9 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
 
 /* Hero Subtext */
 .hero-subtext {
-    font-size: 1.125rem; /* text-lg */
+    font-size: 1rem; /* text-lg */
     line-height: 1.75rem;
-    max-width: 40rem; /* max-w-2xl */
+    max-width: 30rem; /* CHANGED from 40rem to make it narrower */
     margin: 1rem auto 0; /* mt-4 mx-auto */
     color: rgba(251, 249, 241, 0.9); /* text-whelion-beige/90 */
     
@@ -413,6 +440,9 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
     font-size: 1.125rem; /* text-lg */
     margin-top: 2.5rem; /* mt-10 */
     transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-top: 10px;
 }
 .hero-cta-btn:hover {
     opacity: 0.9; /* hover:bg-opacity-90 */
@@ -421,8 +451,8 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
 
 /* ========== 8. ABOUT SECTION (HOME) ========== */
 .about-section {
-    background-color: var(--whelion-dark);
-    color: var(--whelion-beige);
+    background-color: #ffffff; /* User override */
+    color: var(--whelion-dark); /* User override */
     padding-top: 5rem; /* py-20 */
     padding-bottom: 5rem;
 }
@@ -443,15 +473,23 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
         grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
     }
 }
+.about-image img {
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
 
 .about-section .section-heading {
-    color: var(--whelion-beige); /* Specific to this section */
+    color: var(--whelion-dark); /* User override */
 }
 
 .about-content p {
     font-size: 1.125rem; /* text-lg */
     line-height: 1.75rem;
-    color: rgba(251, 249, 241, 0.8); /* text-whelion-beige/80 */
+    color: rgba(47, 47, 47, 0.8); /* text-whelion-dark/80 */
     margin-bottom: 1rem; /* mb-4 */
 }
 .about-content p:last-of-type {
@@ -496,6 +534,11 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
 }
 .portfolio-card:hover {
     transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+.portfolio-card img {
+    width: 100%;
+    height: 16rem; /* h-64 */
+    object-fit: cover;
 }
 
 .portfolio-card-content {
@@ -578,7 +621,7 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
     transition: transform 0.3s; /* transition-transform duration-300 */
 }
 
-/* FAQ Accordion (From original style.css) */
+/* FAQ Accordion */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -641,6 +684,7 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
     font-size: 1.125rem; /* text-lg */
     margin-top: 3rem; /* mt-12 */
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .cta-button:hover {
     opacity: 0.9; /* hover:bg-opacity-90 */
@@ -778,6 +822,7 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
     font-weight: 700; /* font-bold */
     margin-top: 2.5rem; /* mt-10 */
     transition: all 0.3s;
+    cursor: pointer;
 }
 .pricing-card-button:hover {
     background-color: rgba(47, 47, 47, 0.9); /* hover:bg-whelion-dark/90 */
@@ -917,7 +962,7 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
     color: rgba(251, 249, 241, 0.5); /* text-whelion-beige/50 */
 }
 
-/* ========== 15. SCROLL REVEAL ANIMATION (From original style.css) ========== */
+/* ========== 15. SCROLL REVEAL ANIMATION ========== */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -928,44 +973,132 @@ h1 .hero-line:nth-child(2) .hero-line-inner {
     opacity: 1;
     transform: translateY(0);
 }
-.about-section{
-    background-color: #ffffff;
-}
-.about-content p {
-    font-size: 1.125rem; 
-    line-height: 1.75rem;
-    color: rgba(0, 0, 0, 0.8); /* This is dark gray (whelion-dark/80) */
-    margin-bottom: 1rem; 
-}
-.about-section .section-heading {
-    color: var(--whelion-dark); /* Changed from --whelion-beige */
-}
-.hero-title {
-    font-family: var(--font-serif-display);
-    font-weight: 800; /* font-extrabold */
-    font-size: 4rem; /* text-5xl */
-    line-height: 1;
-    margin-bottom: 1rem; /* mb-6 */
-    margin-top: 3.99rem;
-    
-}
-.hero-subtext {
- font-size: 1rem; /* text-lg */
- line-height: 1.75rem;
- max-width: 30rem; /* CHANGED from 40rem to make it narrower */
- margin: 1rem auto 0; /* mt-4 mx-auto */
- color: rgba(251, 249, 241, 0.9); /* text-whelion-beige/90 */ 
- /* Animation (From original style.css) */
- opacity: 0;
- transform: translateY(20px);
- animation: fade-in-up 0.8s ease forwards;
- animation-delay: 1s;
 
+/* ========== 16. CONTACT FORM MODAL ========== */
+.form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    visibility: visible;
 }
-.hero-cta-btn{
-    margin-bottom: 1rem;
-    margin-top: 10px;
+.form-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
-.nav-link{
-    color: #ffffff;
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: relative;
+    z-index: 101;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.form-modal:not(.hidden) .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--whelion-gray);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.modal-close-btn:hover {
+    color: var(--whelion-dark);
+}
+
+.modal-header .modal-title {
+    font-family: var(--font-serif-display);
+    font-size: 2rem;
+    color: var(--whelion-dark);
+}
+.modal-header .modal-description {
+    font-size: 1rem;
+    color: rgba(47, 47, 47, 0.7);
+    margin-top: 0.5rem;
+}
+
+.modal-form {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--whelion-gray);
+    border-radius: 0.375rem;
+    font-family: var(--font-sans-body);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--whelion-gold);
+    box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-submit-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--whelion-dark);
+    background-color: var(--whelion-gold);
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    width: 100%;
+}
+.form-submit-btn:hover {
+    opacity: 0.9;
 }
