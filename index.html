@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whelion - Digital Elegance</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <header id="main-header" class="main-header">
+        <div class="header-container">
+            
+            <a href="#" class="nav-link logo-link" data-page="home">
+                <div class="logo-icon"><img src="whelion logo.jpg" alt=""></div>
+                <span>WHELION</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="services">Our Services</a>
+                <a href="#" class="nav-link" data-page="pricing">Pricing & Packages</a>
+                <a href="#portfolio" class="nav-link" data-scroll-to="portfolio">Portfolio</a>
+                <a href="#contact" class="nav-link nav-cta-btn" data-scroll-to="contact">
+                    Get in Touch
+                </a>
+            </nav>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-close" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#" class="nav-link" data-page="home">Home</a>
+            <a href="#" class="nav-link" data-page="services">Our Services</a>
+            <a href="#" class="nav-link" data-page="pricing">Pricing & Packages</a>
+            <a href="#portfolio" class="nav-link" data-scroll-to="portfolio">Portfolio</a>
+            <a href="#contact" class="nav-link" data-scroll-to="contact">Get in Touch</a>
+        </div>
+    </header>
+
+    <main id="content-wrapper" class="content-wrapper">
+
+        <section id="home-content" class="page-content">
+            
+            <section class="hero-section">
+                <div class="hero-overlay"></div> <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-line"><span class="hero-line-inner">We Build</span></span><br>
+                        <span class="hero-line"><span class="hero-line-inner">Digital Elegance.</span></span>
+                    </h1>
+                    <p class="hero-subtext">
+                        Whelion is a bespoke web development agency crafting high-performance, luxurious digital experiences that define brands.
+                    </p>
+                    <a href="#services" class="hero-cta-btn">
+                       Explore Our Services
+                    </a>
+                </div>
+            </section>
+            
+            <section id="about" class="about-section">
+                <div class="container about-grid">
+                    <div class="about-image reveal-on-scroll">
+                        <img src="about.jpg" alt="Office interior discussion">
+                    </div>
+                    <div class="about-content reveal-on-scroll">
+                        <h2 class="section-heading">About Whelion</h2>
+                        <span class="heading-underline"></span>
+                        <p>
+                            We are not just developers; we are digital architects. Founded on the principle of merging cutting-edge technology with timeless design, Whelion creates web presences that are both functional and formidable.
+                        </p>
+                        <p>
+                            Our philosophy is simple: your website is your most important digital asset. We treat it as such, with meticulous attention to detail, a passion for performance, and a commitment to your brand's unique story.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="portfolio-section section-padding">
+                <div class="container">
+                    <div class="section-header reveal-on-scroll">
+                        <h2 class="section-heading">Our Work</h2>
+                        <p class="section-description">
+                            We partner with visionary brands to create digital masterpieces. Explore a selection of our bespoke projects.
+                        </p>
+                    </div>
+                    
+                    <div class="portfolio-grid">
+                        <div class="portfolio-card group reveal-on-scroll">
+                            <img src="story.jpg" alt="Fashion project screenshot">
+                            <div class="portfolio-card-content">
+                                <h3 class="portfolio-card-title">Valerian</h3>
+                                <p class="portfolio-card-description">High-fashion e-commerce platform.</p>
+                                <a href="https://vishal-portfolio.github.io/VALERIAN/" class="portfolio-card-link">View Case Study (Demo)</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card group reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <img src="final.jpg" alt="Fitness project screenshot">
+                            <div class="portfolio-card-content">
+                                <h3 class="portfolio-card-title">Vertex Athletics</h3>
+                                <p class="portfolio-card-description">Premium booking & class streaming for a fitness club.</p>
+                                <a href="#" class="portfolio-card-link">View Case Study (Demo)</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card group reveal-on-scroll" style="transition-delay: 0.4s;">
+                            <img src="agency.jpg" alt="Corporate project screenshot">
+                            <div class="portfolio-card-content">
+                                <h3 class="portfolio-card-title">Orion Group</h3>
+                                <p class="portfolio-card-description">Corporate web presence for a global consultancy.</p>
+                                <a href="https://whelion.github.io/whelion-website/" class="portfolio-card-link">View Case Study (Demo)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="faq" class="faq-section section-padding">
+                <div class="container faq-container">
+                    <div class="section-header reveal-on-scroll">
+                        <h2 class="section-heading">Frequently Asked Questions</h2>
+                        <p class="section-description">
+                            Clear answers to common inquiries about our process and services.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-list reveal-on-scroll">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">What is your web development process?</span>
+                                <span class="faq-icon-plus">&plus;</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our process is collaborative and transparent, typically involving 5 phases: Discovery & Strategy, Design & UX, Development, Testing & QA, and Launch & Support. We ensure you are involved and informed at every step.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">How long does it take to build a website?</span>
+                                <span class="faq-icon-plus">&plus;</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Timelines vary based on complexity. A standard bespoke website typically takes 2-4 weeks from start to launch. E-commerce platforms or complex web applications may take longer. We provide a detailed project timeline after the discovery phase.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">Do you provide ongoing website maintenance?</span>
+                                <span class="faq-icon-plus">&plus;</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, we offer comprehensive maintenance and support packages. This includes security updates, performance monitoring, content updates, and technical support to ensure your website remains fast, secure, and up-to-date.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">Will my website be mobile-friendly?</span>
+                                <span class="faq-icon-plus">&plus;</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutely. Every website we build is fully responsive — it will look perfect on desktops, tablets, and smartphones.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">Can you redesign my old website and make it look modern?</span>
+                                <span class="faq-icon-plus">&plus;</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Definitely! If your website feels outdated or doesn’t reflect your brand anymore, we can give it a complete makeover — cleaner design, faster loading, mobile-friendly layout, and a professional feel that truly represents your business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="cta-section">
+                <div class="container reveal-on-scroll">
+                    <h2 class="section-heading">Ready to Elevate Your Brand?</h2>
+                    <p class="cta-description">
+                        Let's discuss how we can create a digital presence that is as unique and ambitious as your vision.
+                    </p>
+                    <a href="#" class="cta-button">
+                        Schedule a Consultation
+                    </a>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="services-content" class="page-content hidden services-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h1 class="section-heading large">Our Services</h1>
+                    <p class="section-description">
+                        We provide a complete suite of services to build and grow your digital presence, from initial concept to lasting impact.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card reveal-on-scroll">
+                        <img src="ux.jpg" alt="UX/UI Design" class="service-card-image">
+                        <span class="service-card-number">01</span>
+                        <h3 class="service-card-title">Bespoke Web Design & UX</h3>
+                        <p class="service-card-description">
+                            Crafting visually stunning, intuitive, and unique user interfaces that tell your brand's story and convert visitors into customers.
+                        </p>
+                    </div>
+                    <div class="service-card reveal-on-scroll" style="transition-delay: 0.1s;">
+                        <img src="dev.jpg" alt="Web Development" class="service-card-image">
+                        <span class="service-card-number">02</span>
+                        <h3 class="service-card-title">Web Development</h3>
+                        <p class="service-card-description">
+                            High-performance, scalable, and secure websites built on modern technologies. From static sites to complex web applications.
+                        </p>
+                    </div>
+                    <div class="service-card reveal-on-scroll" style="transition-delay: 0.2s;">
+                        <img src="ecom.jpg" alt="E-Commerce Solutions" class="service-card-image">
+                        <span class="service-card-number">03</span>
+                        <h3 class="service-card-title">E-Commerce Solutions</h3>
+                        <p class="service-card-description">
+                            Building seamless, secure, and high-converting online stores that offer a luxury shopping experience for your customers.
+                        </p>
+                    </div>
+                    <div class="service-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <img src="cgs.jpg" alt="CMS Integration" class="service-card-image">
+                        <span class="service-card-number">04</span>
+                        <h3 class="service-card-title">CMS Integration</h3>
+                        <p class="service-card-description">
+                            Empowering your team with easy-to-use Content Management Systems (like WordPress, Shopify, or headless CMS) for effortless content updates.
+                        </p>
+                    </div>
+                    <div class="service-card reveal-on-scroll" style="transition-delay: 0.4s;">
+                        <img src="seo.jpg" alt="SEO and Performance" class="service-card-image">
+                        <span class="service-card-number">05</span>
+                        <h3 class="service-card-title">Performance & SEO</h3>
+                        <p class="service-card-description">
+                            Optimizing for speed, accessibility, and search engine visibility to ensure your site reaches the right audience and ranks highly.
+                        </p>
+                    </div>
+                    <div class="service-card reveal-on-scroll" style="transition-delay: 0.5s;">
+                        <img src="growth.jpg" alt="Support and Maintenance" class="service-card-image">
+                        <span class="service-card-number">06</span>
+                        <h3 class="service-card-title">Support & Maintenance</h3>
+                        <p class="service-card-description">
+                            Ongoing support, security, and updates to keep your digital asset performing at its peak. We're your long-term technology partner.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing-content" class="page-content hidden pricing-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h1 class="section-heading large">Our Packages</h1>
+                    <p class="section-description">
+                        Transparent pricing for exceptional value. We offer packages for every stage of your brand's digital journey.
+                    </p>
+                </div>
+
+                <div class="pricing-grid">
+                    
+                    <div class="pricing-card reveal-on-scroll">
+                        <h3 class="pricing-card-title">Essential</h3>
+                        <p class="pricing-card-description">For new brands and portfolios.</p>
+                        <div class="pricing-card-price">$399</div>
+                        <ul class="pricing-card-features">
+                            <li><span>&#10003;</span>Bespoke 3-5 Page Design</li>
+                            <li><span>&#10003;</span>Mobile Responsive</li>
+                            <li><span>&#10003;</span>Basic SEO Setup</li>
+                            <li><span>&#10003;</span>Contact Form Integration</li>
+                        </ul>
+                        <a href="#contact" class="pricing-card-button data-scroll-to">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <div class="pricing-card pro reveal-on-scroll">
+                        <div class="pricing-card-header">
+                            <h3 class="pricing-card-title">Pro Business</h3>
+                            <span class="pricing-card-badge">Popular</span>
+                        </div>
+                        <p class="pricing-card-description">For growing businesses & e-commerce.</p>
+                        <div class="pricing-card-price">$499</div>
+                        <ul class="pricing-card-features">
+                            <li><span>&#10003;</span>Custom 5-10 Page Design</li>
+                            <li><span>&#10003;</span>CMS Integration (e.g., WordPress)</li>
+                            <li><span>&#10003;</span>E-commerce Functionality (Basic)</li>
+                            <li><span>&#10003;</span>Advanced SEO & Analytics</li>
+                            <li><span>&#10003;</span>Blog & Content Strategy</li>
+                        </ul>
+                        <a href="#contact" class="pricing-card-button data-scroll-to">
+                            Request a Quote
+                        </a>
+                    </div>
+
+                    <div class="pricing-card reveal-on-scroll">
+                        <h3 class="pricing-card-title">Enterprise</h3>
+                        <p class="pricing-card-description">For complex applications & platforms.</p>
+                        <div class="pricing-card-price">Bespoke</div>
+                        <ul class="pricing-card-features">
+                            <li><span>&#10003;</span>Unlimited Pages & Features</li>
+                            <li><span>&#10003;</span>Custom Web Application</li>
+                            <li><span>&#10003;</span>Advanced E-commerce</li>
+                            <li><span>&#10003;</span>Dedicated Support & Maintenance</li>
+                        </ul>
+                        <a href="#contact" class="pricing-card-button data-scroll-to">
+                            Contact Us
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-logo-group">
+                    <a href="#" class="nav-link logo-link" data-page="home">
+                        <div class="logo-icon"><img src="whelion logo.jpg" alt=""></div>
+                        <span>WHELION</span>
+                    </a>
+                    <p class="footer-description">Crafting the future of digital elegance. Based in the digital ether, serving globally.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/whelion-agency-b45847339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.783 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/whelion_digital?igsh=Mmp4N3ZvejhwOXdj" target="_blank">
+                            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.305.196-6.135 2.025-6.331 6.331-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.196 4.305 2.025 6.135 6.331 6.331 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c4.305-.196 6.135-2.025 6.331-6.331.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.196-4.305-2.025-6.135-6.331-6.331-1.28-.058-1.688-.072-4.947-.072zm0 6.163c-3.203 0-5.837 2.634-5.837 5.837s2.634 5.837 5.837 5.837 5.837-2.634 5.837-5.837-2.634-5.837-5.837-5.837zm0 9.5c-2.02 0-3.663-1.643-3.663-3.663s1.643-3.663 3.663-3.663 3.663 1.643 3.663 3.663-1.643 3.663-3.663 3.663zm6.163-10.337c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/></svg>
+                        </a>
+                        <a href="https://wa.me/qr/GSGVZJ7QLKJXF1" target="_blank">
+                            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.598-3.843-1.598-5.946c0-6.191 5.01-11.191 11.191-11.191c6.18 0 11.19 5.001 11.19 11.191c0 6.18-5.01 11.19-11.19 11.19c-2.06 0-4.043-.557-5.847-1.594l-6.163 1.687zm.8-2.148l4.264-1.121l1.105.67c1.623 1.04 3.487 1.594 5.438 1.594c4.962 0 9.01-4.049 9.01-9.01c0-4.962-4.048-9.01-9.01-9.01c-4.962 0-9.01 4.048-9.01 9.01c0 1.95.626 3.811 1.698 5.438l.67 1.105l-1.121 4.265z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="services">Services</a></li>
+                        <li><a href="#portfolio" class="nav-link" data-scroll-to="portfolio">Portfolio</a></li>
+                        <li><a href="#" class="nav-link" data-page="pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Build online presence NOW</h4>
+                    <ul class="footer-contact">
+                        <li><a href="mailto:whelionagency@gmail.com">whelionagency@gmail.com</a></li>
+                        <li><a href="tel:+918218912032">+91 8218912032</a></li>
+                        <li><p>123 Luxury Ave, Design City</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                &copy; <span id="current-year"></span> Whelion. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
