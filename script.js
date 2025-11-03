@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // --- 1. Page Loader ---
-    // Hides the loader once the main content is loaded
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
         if (loader) {
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mobileMenuBtn && mobileMenu && iconOpen && iconClose) {
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden'); // 'hidden' is a Tailwind class
+            mobileMenu.classList.toggle('hidden');
             iconOpen.classList.toggle('hidden');
             iconClose.classList.toggle('hidden');
         });
@@ -26,9 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                iconOpen.classList.remove('hidden');
-                iconClose.classList.add('hidden');
+                // Only close if it's not the form button
+                if (!link.classList.contains('open-form-cta')) {
+                    mobileMenu.classList.add('hidden');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                }
             });
         });
     }
@@ -39,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const question = item.querySelector('.faq-question');
         if (question) {
             question.addEventListener('click', () => {
-                // Check if this item is already open
                 const isAlreadyOpen = item.classList.contains('open');
                 
                 // Close all other items
@@ -89,22 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- 5. Smooth Scroll-to-Section Links ---
-    const scrollLinks = document.querySelectorAll('.nav-link[data-scroll-to], .data-scroll-to');
+    // --- 5. Smooth Scroll-to-Section Links (Portfolio) ---
+    const scrollLinks = document.querySelectorAll('.nav-link[data-scroll-to]');
     
     scrollLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             
-            let targetId;
-            if (link.hasAttribute('data-scroll-to')) {
-                targetId = link.getAttribute('data-scroll-to');
-            } else if (link.getAttribute('href')) {
-                targetId = link.getAttribute('href').substring(1); // Get id from href="#contact"
-            } else {
-                return;
-            }
-
+            let targetId = link.getAttribute('data-scroll-to');
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
@@ -154,5 +147,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // --- 8. Contact Form Modal Logic ---
+    const modal = document.getElementById('form-modal');
+    const openModalBtns = document.querySelectorAll('.open-form-cta');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    const openModal = () => {
+        if (modal) modal.classList.remove('hidden');
+        // Also close mobile menu if open
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+             mobileMenu.classList.add('hidden');
+             iconOpen.classList.remove('hidden');
+             iconClose.classList.add('hidden');
+        }
+    };
+
+    const closeModal = () => {
+        if (modal) modal.classList.add('hidden');
+    };
+
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
 });
